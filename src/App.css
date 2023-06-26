@@ -1,0 +1,29 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #5c5151;
+}
+
+.container {
+  width: 100%;
+  max-width: 600px;
+  background-color: #475e5f;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  padding: 20px;
+  line-height: 0%;
+}
+
+.container > * {
+  margin-bottom: 10px;
+}
+
+@media screen and (max-width: 640px) {
+  .container {
+    border-radius: 0;
+    box-shadow: none;
+    padding: 10px;
+  }
+}
