@@ -1,20 +1,34 @@
 import React from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTrashAlt } from "@fortawesome/free-solid-svg-icons";
+import "../App.css";
 
-const Task = ({ task, toggleTask }) => {
-  const handleToggle = () => {
-    toggleTask(task.id);
+function Task({ task, onToggleComplete, onRemoveTask }) {
+  const handleToggleComplete = () => {
+    onToggleComplete(task.id);
+  };
+
+  const handleRemoveTask = () => {
+    onRemoveTask(task.id);
   };
 
   return (
-    <div>
+    <li>
+      <input
+        type="checkbox"
+        checked={task.completed}
+        onChange={handleToggleComplete}
+      />
       <span
         style={{ textDecoration: task.completed ? "line-through" : "none" }}
       >
         {task.name}
       </span>
-      <input type="checkbox" checked={task.completed} onChange={handleToggle} />
-    </div>
+      <button className="remove-button" onClick={handleRemoveTask}>
+        <FontAwesomeIcon icon={faTrashAlt} />
+      </button>
+    </li>
   );
-};
+}
 
 export default Task;
