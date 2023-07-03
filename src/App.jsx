@@ -5,13 +5,6 @@ import TaskList from "./components/TaskList";
 import AddTask from "./components/AddTask";
 
 function App() {
-  // const [tasks, setTasks] = useState([]);
-  // useEffect(() => {
-  //   const savedTasks = localStorage.getItem("tasks");
-  //   if (savedTasks) {
-  //     setTasks(JSON.parse(savedTasks));
-  //   }
-  // }, []);
   const [tasks, setTasks] = useState(() => {
     const savedTasks = localStorage.getItem("tasks");
     if (savedTasks) {
