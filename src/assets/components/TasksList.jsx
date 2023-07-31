@@ -10,7 +10,7 @@ export const TasksList = ({
 	return (
 		<ul>
 			{tasks.map(tasks => (
-				<Tasks
+				<Tasks 
 					key={tasks.id}
 					tasks={tasks}
 					handleUpdateTasks={handleUpdateTasks}

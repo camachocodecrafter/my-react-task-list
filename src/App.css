@@ -29,7 +29,7 @@ body {
 	box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
 	padding: 25px;
 	border-radius: 20px;
-	width: 700px;
+	width: 1200px;
   background-color: #0e0c19;
 }
 
@@ -68,7 +68,7 @@ ul li {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	gap: 20px;
+	gap: 15px;
  
 }
 
@@ -94,9 +94,23 @@ ul li form {
 	font-size: 18px;
 	color: #99D2BE;
 	width: 100%;
-	/* background-color: #000; */
 	outline: none;
+	display: block;
   background-color: #0e0c19;
+  
+}
+
+.input-update-d {
+	border: none;
+	font-weight: 500;
+	font-family: inherit;
+	font-size: 10px;
+	color: #99D2BE;
+	display: grid;
+	width: 100%;
+	
+  background-color: #0e0c19;
+  
 }
 
 .container-done {
@@ -106,6 +120,7 @@ ul li form {
 	border-radius: 20px;
 	border: 2px solid var(--verde);
 	cursor: pointer;
+	
 }
 
 .container-done.active {
@@ -113,7 +128,7 @@ ul li form {
 }
 
 .text-decoration-dashed {
-	text-decoration: line-through;
+	text-decoration: line-through var(--rojo);
 }
 
 .btn-delete {
@@ -165,7 +180,6 @@ form {
 
 .input-add {
 	border: none;
-	outline: none;
 	padding: 10px 20px;
 	box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.15);
 	border-radius: 20px;
@@ -174,6 +188,8 @@ form {
 	font-size: 17px;
 	color: #555;
 }
+
+
 
 .btn-add {
 	border: none;

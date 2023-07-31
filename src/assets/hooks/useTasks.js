@@ -50,12 +50,13 @@ export const useTasks = () => {
 		dispatch(action);
 	};
 
-	const handleUpdateTasks = (id, description) => {
+	const handleUpdateTasks = (id, description, descrip) => {
 		const action = {
 			type: 'Update Tasks',
 			payload: {
 				id,
 				description,
+				descrip,
 			},
 		};
 

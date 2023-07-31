@@ -3,8 +3,8 @@ import { FaEdit } from 'react-icons/fa';
 import { useForm } from '../hooks/useForm';
 
 export const TasksUpdate = ({ tasks, handleUpdateTasks }) => {
-	const { updateDescription, onInputChange } = useForm({
-		updateDescription: tasks.description,
+	const { updateDescription, onInputChange, updateDescrip } = useForm({
+		updateDescription: tasks.description, updateDescrip: tasks.descrip
 	});
 
 	const [disabled, setDisabled] = useState(true);
@@ -15,8 +15,9 @@ export const TasksUpdate = ({ tasks, handleUpdateTasks }) => {
 
 		const id = tasks.id;
 		const description = updateDescription;
+		const descrip = updateDescrip;
 
-		handleUpdateTasks(id, description);
+		handleUpdateTasks(id, description, descrip);
 
 		setDisabled(!disabled);
 
@@ -25,6 +26,7 @@ export const TasksUpdate = ({ tasks, handleUpdateTasks }) => {
 
 	return (
 		<form onSubmit={onSubmitUpdate}>
+
 			<input
 				type='text'
 				className={`input-update ${
@@ -37,6 +39,21 @@ export const TasksUpdate = ({ tasks, handleUpdateTasks }) => {
 				readOnly={disabled}
 				ref={focusInputRef}
 			/>
+
+
+
+			<input type="text"
+			className={`input-update-d ${
+				tasks.done ? 'text-decoration-dashed' : ''
+			}`}
+			name='updateDescrip'
+			value={updateDescrip}
+			onChange={onInputChange}
+			placeholder='Escribe una breve descripcion de la tarea'
+			readOnly={disabled}
+			ref={focusInputRef} />
+
+
 
 			<button className='btn-edit' type='submit'>
 				<FaEdit />

@@ -1,19 +1,23 @@
 import React from 'react';
 import { useForm } from '../hooks/useForm';
 
-export const TasksAdd = ({ handleNewTasks }) => {
-	const { description, onInputChange, onResetForm } = useForm({
-		description: '',
+export const TasksAdd = ({ handleNewTasks}) => {
+	const { description, descrip, onInputChange, onResetForm } = useForm({
+		description: '', descrip:''
 	});
 
 	const onFormSubmit = e => {
 		e.preventDefault();
 
-		if (description.length <= 1) return;
-
+         
+        if (description.trim().length <= 2) {
+            return( alert('La descripcion de la tarea debe tener más de dos caracteres'));
+        }      
+               
 		let newTasks = {
 			id: new Date().getTime(),
 			description: description,
+			descrip: descrip,
 			done: false,
 		};
 
@@ -29,8 +33,17 @@ export const TasksAdd = ({ handleNewTasks }) => {
 				name='description'
 				value={description}
 				onChange={onInputChange}
-				placeholder='¿Qué pendiente tienes?'
+				placeholder='¿Qué tarea pendiente tienes?'
 			/>
+		
+
+
+			<input type="text"
+			className='input-add'
+			name='descrip'
+			value={descrip}
+			onChange={onInputChange}
+			placeholder='Escribe una breve descripcion' />
 
 			<button className='btn-add' type='submit'>
 				Agregar
